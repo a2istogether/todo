@@ -20,9 +20,22 @@ A simple and responsive to-do list application built with React and Redux Toolki
 Check out the live demo: [Live Demo Link](https://your-demo-link.com)
 
 ## Screenshots
-
+#### Light Mode
 ![Screenshot 1](./screenshots/screenshot1.png)
 ![Screenshot 2](./screenshots/screenshot2.png)
+![Screenshot 3](./screenshots/screenshot3.png)
+![Screenshot 4](./screenshots/screenshot4.png)
+
+#### Dark Mode
+![Dark Screenshot 1](./screenshots/dark1.png)
+![Dark Screenshot 2](./screenshots/dark2.png)
+![Dark Screenshot 3](./screenshots/dark3.png)
+
+#### Other Screenshots
+![Other Screenshot 1](./screenshots/1.png)
+![Other Screenshot 2](./screenshots/2.png)
+![Other Screenshot 3](./screenshots/3.png)
+
 
 ## Getting Started
 
@@ -38,8 +51,8 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/todo-react-app.git
-   cd todo-react-app
+   git https://github.com/a2istogether/todo.git
+   cd todo
    ```
 
 2. Install dependencies:
@@ -57,20 +70,20 @@ To run this project locally, follow these steps:
 3. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    or:
 
    ```bash
-   yarn start
+   yarn run dev
    ```
 
 4. Open your browser and navigate to `http://localhost:3000`.
 
 ## Usage
 
-- **Add a Task**: Enter your task in the input field and press the "Add" button.
+- **Add a Task**: Enter your task in the input field and press the "Add Task or Press Enter" button.
 - **Set Task Priority**: Choose a priority level from the dropdown when adding or editing tasks.
 - **Mark as Completed**: Click the checkbox next to a task to mark it as completed.
 - **Delete a Task**: Click the delete icon next to the task you want to remove.
@@ -86,7 +99,7 @@ To run this project locally, follow these steps:
 
 ## API Integration
 
-This app integrates with the **OpenWeatherMap API** to display weather information for outdoor tasks. You can replace the API key in `src/config.js` to use your own.
+This app integrates with the **Weatherapi API** to display weather information for outdoor tasks. You can replace the API key in `src/components/WeatherInfo.jsx` to use your own.
 
 ```javascript
 const API_KEY = 'your-openweather-api-key';

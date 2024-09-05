@@ -11,14 +11,17 @@ const WeatherInfo = () => {
     const authInfo = localStorage.getItem("auth");
     return authInfo ? JSON.parse(authInfo) : {};
   };
-  
+
+  const API_KEY = import.meta.env.WEATHER_API_KEY;
+
+
   useEffect(() => {
     const userInfo = authInfoFromLocalStorage();
     setcity(userInfo.city.toLowerCase());
     const fetchWeather = async () => {
       try {
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/current.json?key=35602899f05a458494134733240509&q=${city}`
+          `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
         );
         setWeather(response.data.current);
       } catch (error) {
