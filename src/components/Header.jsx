@@ -46,7 +46,7 @@ const Header = () => {
   return (
     <nav className=" sticky top-0 z-[1000] bg-green-200 dark:bg-green-300 p-5 flex items-center justify-between ">
       <div className="flex items-center gap-5">
-        {isAuthenticated && <div>
+        {isAuthenticated && <div className="md:hidden">
         {isMenuOpen  ? (
           <IoMdClose onClick={handleMenu} className="text-2xl cursor-pointer" />
         ) : (
