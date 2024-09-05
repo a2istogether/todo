@@ -12,7 +12,7 @@ const WeatherInfo = () => {
     return authInfo ? JSON.parse(authInfo) : {};
   };
 
-  const API_KEY = import.meta.env.WEATHER_API_KEY;
+  const API_KEY = '35602899f05a458494134733240509';
 
 
   useEffect(() => {
