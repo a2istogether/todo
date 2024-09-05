@@ -9,7 +9,7 @@ const Hero = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
-  const [isRemember, setIsRemember] = useState(false);
+  const [isRemember, setIsRemember] = useState(true);
   const [isSignUp, setIsSignUp] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -185,7 +185,7 @@ const Hero = () => {
             {isSignUp ? "Sign Up" : "Log In"}
           </button>
           <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
-            {isSignUp ? "Don't have an account?" : "Already have an account"}
+            {!isSignUp ? "Don't have an account?" : "Already have an account"}
             <span
               className=" cursor-pointer ml-1 block font-sans text-sm font-bold leading-normal text-green-500 antialiased"
               onClick={() => setIsSignUp(!isSignUp)}
