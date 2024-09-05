@@ -29,7 +29,7 @@ const App = () => {
       <Header />
       {isAuthenticated ? (
         <div className="md:flex px-3">
-          {<div className={`w-[300px] md:w-[250px] overflow-scroll pb-5 fixed top-12 mt-2 bottom-0 max-h-screen  z-[999] px-5 bg-green-200 dark:bg-green-300 duration-300 ease-in-out transition-all ${isMenuOpen?"-left-[0%]":"-left-[100%]"}`}>
+          {<div className={`w-[300px] md:w-[250px] overflow-scroll overflow-x-hidden pb-5 fixed top-12 mt-2 bottom-0 max-h-screen  z-[999] px-5 bg-green-200 dark:bg-green-300 duration-300 ease-in-out transition-all ${isMenuOpen?"-left-[0%]":"-left-[100%]"}`}>
             <Sidebar/>
           </div>}
           <div className="flex flex-col mx-auto gap-3">
