@@ -102,35 +102,20 @@ To run this project locally, follow these steps:
 This app integrates with the **Weatherapi API** to display weather information for outdoor tasks. You can replace the API key in `src/components/WeatherInfo.jsx` to use your own.
 
 ```javascript
-const API_KEY = 'your-openweather-api-key';
+const API_KEY = 'your-weatherapi-api-key';
 ```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev`
 
 Runs the app in development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
-
-Launches the test runner in interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
+Builds the app for production to the `dist` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-You can add more details depending on your app's specifics, like describing the state management in Redux or how the API integration works in detail. If you're deploying to a service like Netlify or Vercel, you could also add deployment instructions.
