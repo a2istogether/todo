@@ -17,7 +17,7 @@ A simple and responsive to-do list application built with React and Redux Toolki
 
 ## Demo
 
-Check out the live demo: [Live Demo Link](https://your-demo-link.com)
+Check out the live demo: [Live Demo Link](https://todosite124.netlify.app/)
 
 ## Screenshots
 
