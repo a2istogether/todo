@@ -1,0 +1,45 @@
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import Hero from "./components/Auth";
+import Header from "./components/Header";
+import TaskInput from "./components/TaskInput";
+import TaskList from "./components/TaskList";
+
+import Sidebar from "./components/Sidebar";
+
+const App = () => {
+
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const { isDarkMode, isMenuOpen} = useSelector(
+    (state) => state.constant
+  );
+
+  useEffect(()=>{
+    if (isDarkMode) {
+   document.body.classList.add('dark') ;     
+    }else{
+      document.body.classList.remove('dark') ;     
+       }
+  },[isDarkMode])
+   
+  return (
+    <div className=" dark:bg-black min-h-screen ">
+      <Header />
+      {isAuthenticated ? (
+        <div className="md:flex px-3">
+          {<div className={`w-[300px] md:w-[250px] overflow-scroll pb-5 fixed top-12 mt-2 bottom-0 max-h-screen  z-[999] px-5 bg-green-200 dark:bg-green-300 duration-300 ease-in-out transition-all ${isMenuOpen?"-left-[0%]":"-left-[100%]"}`}>
+            <Sidebar/>
+          </div>}
+          <div className="flex flex-col mx-auto gap-3">
+            <TaskInput />
+            <TaskList />
+          </div>
+        </div>
+      ) : (
+        <Hero />
+      )}
+    </div>
+  );
+};
+
+export default App;
