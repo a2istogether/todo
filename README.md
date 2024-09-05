@@ -54,7 +54,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git https://github.com/a2istogether/todo.git
+   git clone https://github.com/a2istogether/todo.git
    cd todo
    ```
 
