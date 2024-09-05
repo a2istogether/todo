@@ -41,7 +41,7 @@ const Sidebar = () => {
         <RxAvatar className="text-6xl bg-green-800 rounded-full  text-white " />
       </div>
       <div>
-        <h1 className="text-xl font-bold mt-3 ">Hello Arun</h1>
+        <h1 className="text-xl font-bold mt-3 ">Hello </h1>
       </div>
       <div>
         <Dashboard/>
