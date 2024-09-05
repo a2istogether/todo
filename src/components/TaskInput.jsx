@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addTask } from "../features/tasks/taskSlice";
-import { IoIosSearch, IoMdClose } from "react-icons/io";
 import { MdAssignmentAdd } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { addTask } from "../features/tasks/taskSlice";
 
 const TaskInput = () => {
   const [task, setTask] = useState("");
@@ -11,6 +11,7 @@ const TaskInput = () => {
   const handleAddTask = (e) => {
     e.preventDefault();
     if (task.trim()) {
+      toast.success('A Task Added');
       dispatch(addTask({ text: task, priority: "Medium" }));
       setTask("");
     }

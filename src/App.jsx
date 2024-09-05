@@ -6,6 +6,7 @@ import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 
 import Sidebar from "./components/Sidebar";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
   },[isDarkMode])
    
   return (
+    <>
     <div className=" dark:bg-black min-h-screen ">
       <Header />
       {isAuthenticated ? (
@@ -39,6 +41,8 @@ const App = () => {
         <Hero />
       )}
     </div>
+    <ToastContainer autoClose={2000} theme={isDarkMode?'dark':'light'} stacked />
+    </>
   );
 };
 

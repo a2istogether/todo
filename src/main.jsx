@@ -4,8 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 
 
-import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import 'react-toastify/dist/ReactToastify.css';
 import store from "./app/store";
 
 createRoot(document.getElementById("root")).render(

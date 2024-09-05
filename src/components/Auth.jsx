@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { login } from "../features/auth/authSlice";
+import { toast } from "react-toastify";
 
 
 const Hero = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
+  const [isRemember, setIsRemember] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -20,17 +22,39 @@ const Hero = () => {
     const info = {
       email,
       password,
-      city
+      city,
+      isRemember
     };
     localStorage.setItem("auth", JSON.stringify(info));
   };
   const authD = authInfoFromLocalStorage();
+  useEffect(()=>{
+    const  {
+      email,
+      password,
+      city,
+      isRemember
+    } = authD;
+    if (isRemember && email !== '' && city !== '') {
+      dispatch(login());
+      toast.success("Login Successfully");
+    }
+  },[])
 
   const handleAuth = (e) => {
-    
     e.preventDefault();
     if (isSignUp) {
-      if (password !== confirmPassword && city !== '') return;
+      if (city === '' || password === '' || confirmPassword === '') {
+        toast.error('Fill All the Inputs First')
+        return;
+      };
+      if (password !== confirmPassword) {
+        toast.error('Passwords not match !');
+        setPassword("");
+        setConfirmPassword("");
+        return;
+      };
+      toast.success('Account created successfully')
       setEmail("");
       setPassword("");
       dispatch(login());
@@ -38,13 +62,31 @@ const Hero = () => {
       setConfirmPassword("");
     } else {
       if (authD.password !== password && authD.email !== email) {
+        toast.error('Please Sign Up First')
         return
+      }
+      if (isRemember) {
+        const  {
+          email,
+          password,
+          city,
+          isRemember
+        } = authInfoFromLocalStorage();
+        const Reinfo = {
+          email,
+          password,
+          city,
+          isRemember:true
+        };
+        localStorage.setItem("auth", JSON.stringify(Reinfo));
       }
       setEmail("");
       setPassword("");
       dispatch(login());
+      toast.success("Login Successfully");
     }
   };
+
   return (
     <div className="mt-40 px-3 dark:bg-black bg-green-50 flex justify-center items-center">
       <form
@@ -118,6 +160,8 @@ const Hero = () => {
                   id="checkbox"
                   className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border  transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
                   type="checkbox"
+                  checked= {isRemember}
+                  onChange={()=>setIsRemember(!isRemember)}
                 />
                 <span className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
                   <IoMdCheckmark/>

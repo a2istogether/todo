@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 
 const WeatherInfo = () => {
@@ -14,7 +15,6 @@ const WeatherInfo = () => {
   useEffect(() => {
     const userInfo = authInfoFromLocalStorage();
     setcity(userInfo.city.toLowerCase());
-    
     const fetchWeather = async () => {
       try {
         const response = await axios.get(
@@ -22,7 +22,7 @@ const WeatherInfo = () => {
         );
         setWeather(response.data.current);
       } catch (error) {
-        
+        toast.error(error);
       }
     };
     
@@ -47,7 +47,7 @@ const WeatherInfo = () => {
 
           <p className="temp">{weather.temp_c}°C</p>
         </div>
-      </div>:<p>Loading</p>}
+      </div>:''}
     </>
   );
 };

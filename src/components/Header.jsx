@@ -8,6 +8,7 @@ import { IoMdClose } from "react-icons/io";
 import { IoMdSunny } from "react-icons/io";
 import { IoListSharp } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -23,12 +24,15 @@ const Header = () => {
   };
   const handleGrid = () => {
     dispatch(grid(!isGridMode));
+    toast.success(`Changed To ${!isGridMode?'Grid':"List"} Mode`);
   };
   const handleSearch = () => {
     dispatch(search(!isSearching));
   };
   const handletheme = () => {
     dispatch(dark(!isDarkMode));
+    toast.success(`Changed To ${!isDarkMode?'Dark':"Light"} Mode`);
+
   };
   const handleSearching = () => {
     dispatch(searching(searchText));
@@ -67,7 +71,7 @@ const Header = () => {
       <div className="flex items-center gap-5">
         {isAuthenticated && <div className="flex items-center gap-5">
           {!isSearching &&<IoIosSearch className="text-2xl cursor-pointer" onClick={handleSearch} />}
-        {isGridMode ? (
+        {!isGridMode ? (
           <IoGridOutline
             className="text-2xl cursor-pointer"
             onClick={handleGrid}
