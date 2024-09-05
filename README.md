@@ -6,6 +6,8 @@ A simple and responsive to-do list application built with React and Redux Toolki
 
 - **Add Tasks**: Easily add tasks to your to-do list with a simple input field.
 - **View Tasks**: Displays all tasks with their priority (High, Medium, Low).
+- **Search Tasks**: Displays all tasks based on Search Query.
+- **Shorting Tasks**: Displays all tasks based on Shorting (All Tasks, Completed Tasks, Pending Tasks).
 - **Delete Tasks**: Remove tasks with a single click.
 - **Task Prioritization**: Set priority levels for tasks (High, Medium, Low).
 - **Mark as Completed**: Mark tasks as completed and filter them.
@@ -13,7 +15,8 @@ A simple and responsive to-do list application built with React and Redux Toolki
 - **User Authentication**: Simulated login/logout functionality using Redux.
 - **API Integration**: Integrated with a public API (e.g., weather API) to display relevant data for outdoor tasks.
 - **Mobile-First Design**: Fully responsive and optimized for mobile, tablet, and desktop views.
-- **Dark Mode**: Toggle between light and dark themes.
+- **Dark or Light Mode**: Toggle between light and dark themes.
+- **Grid or List Mode**: Toggle between Grid and List Mode Tasks Views.
 
 ## Demo
 
