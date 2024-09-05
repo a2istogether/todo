@@ -21,20 +21,20 @@ Check out the live demo: [Live Demo Link](https://todosite124.netlify.app/)
 
 ## Screenshots
 #### Light Mode
-![Screenshot 1](./screenshots/screenshot1.png)
-![Screenshot 2](./screenshots/screenshot2.png)
-![Screenshot 3](./screenshots/screenshot3.png)
-![Screenshot 4](./screenshots/screenshot4.png)
+![Screenshot 1](./src/screenshots/screenshot1.png)
+![Screenshot 2](./src/screenshots/screenshot2.png)
+![Screenshot 3](./src/screenshots/screenshot3.png)
+![Screenshot 4](./src/screenshots/screenshot4.png)
 
 #### Dark Mode
-![Dark Screenshot 1](./screenshots/dark1.png)
-![Dark Screenshot 2](./screenshots/dark2.png)
-![Dark Screenshot 3](./screenshots/dark3.png)
+![Dark Screenshot 1](./src/screenshots/dark1.png)
+![Dark Screenshot 2](./src/screenshots/dark2.png)
+![Dark Screenshot 3](./src/screenshots/dark3.png)
 
 #### Other Screenshots
-![Other Screenshot 1](./screenshots/1.png)
-![Other Screenshot 2](./screenshots/2.png)
-![Other Screenshot 3](./screenshots/3.png)
+![Other Screenshot 1](./src/screenshots/1.png)
+![Other Screenshot 2](./src/screenshots/2.png)
+![Other Screenshot 3](./src/screenshots/3.png)
 
 
 ## Getting Started
